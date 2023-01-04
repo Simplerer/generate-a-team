@@ -5,7 +5,7 @@
   - [Installation](#installation)
   - [Image](#image)
   - [Usage](#usage)
-  - [Video Test](#videotest)
+  - [Video](#video)
   - [Questions](#questions)
 ## Description
   This project takes in the information of a fictional company and dynamically builds our a roster with some basic infrmation. The application is called with node and only needs to have simple questions answered to complete. This application is also a practice in running tests on programs to make sure they all pass.
@@ -19,9 +19,9 @@
 ## Usage
   I would use this to create an information sheet on my employees
     
-## Video Test
+## Video
 
-
+[Video](https://app.castify.com/view/a4b03ec8-d94b-4d6a-a587-859e64e69f63)
   
 ## Questions
   If you need any more information on using this application, my email is simplererstone@gmail.com.
