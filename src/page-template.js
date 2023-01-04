@@ -1,9 +1,7 @@
 const fs = require('fs');
 
 const populate = (content) => {
-    fs.appendFile('dist/team.html', content, (err) => {
-        err ? console.error(err) : console.log('Commit logged!')
-    })
+    fs.appendFile('dist/team.html', content, (err) => (err))
 }
 
 let content
@@ -18,55 +16,64 @@ const generateTeam = (myTeam) => {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MY TEAM</title>
-        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+        <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-    <Header id='tops'>Team Roster</Header>`)
+    <Header id='tops'><H1>Team Roster</H1></Header>
+    <div>`)
    
-    for (let i = 0; i < myTeam.length; i++) {
+    for (let i = 0; i < myTeam.length; i++) {           
 
         if (myTeam[i].role == 'Manager') {
             symbol = '☕'
             content = `
-      <section>
-        <header>
+      <section id='card'>
+        <header id='info'>
           <h2>${myTeam[i].name}</h2>
           <h2>${symbol} ${myTeam[i].role}</h2>
         </header>
-        <p>${myTeam[i].id}</p>
-        <p>${myTeam[i].email}</p>
-        <p>${myTeam[i].officeNum}</p>
+        <p>ID: ${myTeam[i].id}</p>
+        <p>Email: ${myTeam[i].email}</p>
+        <p>Office Num: ${myTeam[i].officeNum}</p>
       </section>`
             populate(content);
         } else if (myTeam[i].role == 'Engineer') {
             symbol = '🔍'
-            content = `<section>
-        <header>
+            content = `
+      <section id='card'>
+        <header id='info'>
           <h2>${myTeam[i].name}</h2>
-          <h2>${myTeam[i].role}</h2>
+          <h2>${symbol} ${myTeam[i].role}</h2>
         </header>
-        <p>${myTeam[i].id}/p>
-        <p>${myTeam[i].email}</p>
-        <p>${myTeam[i].github}</p>
+        <p>ID: ${myTeam[i].id}</p>
+        <p>Email: ${myTeam[i].email}</p>
+        <p>GitHub: <a href='https://github.com/${myTeam[i].github}' target='_blank'>${myTeam[i].github}</a></p>
       </section>`
             populate(content);
         } else {
             symbol = '📖'
-            content = `<section>
-        <header>
+            content = `
+      <section id='card'>
+        <header id='info'>
           <h2>${myTeam[i].name}</h2>
-          <h2>${myTeam[i].role}</h2>
+          <h2>${symbol} ${myTeam[i].role}</h2>
         </header>
-        <p>${myTeam[i].id}/p>
-        <p>${myTeam[i].email}</p>
-        <p>${myTeam[i].school}</p>
+        <p>ID: ${myTeam[i].id}</p>
+        <p>Email: ${myTeam[i].email}</p>
+        <p>School: ${myTeam[i].school}</p>
       </section>`
             populate(content);
-        }
-    };
+        } 
+    };  
 
-    populate(`</body>
-    </html>`)
+    setTimeout(() => {
+        populate(`
+    </div>
+    </body>
+    </html>
+    `)
+    console.log('Your Team Roster Page is finished!')}, 2000);
+   
 }
     module.exports = {
         generateTeam

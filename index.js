@@ -6,10 +6,6 @@ const inquirer = require('inquirer');
 
 const myTeam = [];
 
-// const generateTeam = () => {
-
-// }
-
 const newIntern = (name, id, email) => {
     inquirer
     .prompt([

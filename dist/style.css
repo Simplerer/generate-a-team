@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(249, 227, 198);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+#tops {
+    text-align: center;
+    color:rgb(40, 83, 85);
+    font-size: 180%;
+    background-color: rgb(161, 155, 148);
+    padding: 4px;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}
+
+#card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 200px;
+    border: 4px;
+    border-color: black;
+    border-radius: 8px;
+    box-shadow: 4px 4px gray;
+    background-color: rgb(161, 155, 148);
+    color:rgb(40, 83, 85);
+    font-weight: 600;
+    padding: 12px;
+    margin: 40px;
+}
+
+#info {
+    background-color: rgb(36, 29, 19);
+    color: rgb(249, 227, 198);
+    padding: 20px;
+    border-radius: 8px 8px 0 0;
+}
