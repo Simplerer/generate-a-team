@@ -12,6 +12,9 @@
     
 ## Installation
   To begin the application, run node index.js in the terminal
+
+## Image
+![Example](./Assets/Screenshot%202023-01-04%20012803.png)
     
 ## Usage
   I would use this to create an information sheet on my employees
