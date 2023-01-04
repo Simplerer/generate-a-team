@@ -33,7 +33,7 @@ const generateTeam = (myTeam) => {
           <h2>${symbol} ${myTeam[i].role}</h2>
         </header>
         <p>ID: ${myTeam[i].id}</p>
-        <p>Email: ${myTeam[i].email}</p>
+        <p>Email: <a href='mailto:${myTeam[i].email}'>${myTeam[i].email}</a></p>
         <p>Office Num: ${myTeam[i].officeNum}</p>
       </section>`
             populate(content);
@@ -46,7 +46,7 @@ const generateTeam = (myTeam) => {
           <h2>${symbol} ${myTeam[i].role}</h2>
         </header>
         <p>ID: ${myTeam[i].id}</p>
-        <p>Email: ${myTeam[i].email}</p>
+        <p>Email: <a href='mailto:${myTeam[i].email}'>${myTeam[i].email}</a></p>
         <p>GitHub: <a href='https://github.com/${myTeam[i].github}' target='_blank'>${myTeam[i].github}</a></p>
       </section>`
             populate(content);
@@ -59,7 +59,7 @@ const generateTeam = (myTeam) => {
           <h2>${symbol} ${myTeam[i].role}</h2>
         </header>
         <p>ID: ${myTeam[i].id}</p>
-        <p>Email: ${myTeam[i].email}</p>
+        <p>Email: <a href='mailto:${myTeam[i].email}'>${myTeam[i].email}</a></p>
         <p>School: ${myTeam[i].school}</p>
       </section>`
             populate(content);
@@ -72,7 +72,8 @@ const generateTeam = (myTeam) => {
     </body>
     </html>
     `)
-    console.log('Your Team Roster Page is finished!')}, 2000);
+    console.log(`Your Team Roster Page is finished!
+    Check for team.html in dist folder!`)}, 2000);
    
 }
     module.exports = {
