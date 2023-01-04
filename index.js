@@ -1,9 +1,14 @@
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const { generateTeam } = require('./src/page-template')
 const inquirer = require('inquirer');
 
 const myTeam = [];
+
+// const generateTeam = () => {
+
+// }
 
 const newIntern = (name, id, email) => {
     inquirer
@@ -22,11 +27,11 @@ const newIntern = (name, id, email) => {
     .then((response) => {
         const intern = new Intern(name, id, email, response.school)
         myTeam.push(intern);
-        console.log(myTeam);
+        // console.log(myTeam);
         if (response.finish === 'Yes!') {
             employeeStart();
         } else {
-            generateTeam();
+            generateTeam(myTeam);
         }
     })
 }
@@ -47,11 +52,11 @@ const newEngineer = (name, id, email) => {
     .then((response) => {
         const engineer = new Engineer(name, id, email, response.github)
         myTeam.push(engineer);
-        console.log(myTeam);
+        // console.log(myTeam);
         if (response.finish === 'Yes!') {
             employeeStart();
         } else {
-            generateTeam();
+            generateTeam(myTeam);
         }
     })
 }
@@ -124,11 +129,9 @@ const managerStart = () => {
             if (response.finish === 'Yes!') {
                 employeeStart();
             } else {
-                generateTeam();
+                generateTeam(myTeam);
             }
         })
-        // .then((response) => {
-        // })
 }
 
 managerStart();
